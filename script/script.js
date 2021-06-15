@@ -10,25 +10,35 @@ document.addEventListener('DOMContentLoaded', () => {
 	const formCustomer = document.querySelector('#form-customer')
 	const ordersTable = document.querySelector('#orders')
 	const modalOrder = document.querySelector('#order_read')
-	const modalOrderActive = document.querySelector('#order_active')
-
+	const modalOrderActive = document.querySelector('#order_active');
+	
+	// щчистка localstorage
+	// localStorage.clear();
+// 
 	const orders = JSON.parse(localStorage.getItem('threeOrders')) || [];
 	// localStorage
+	
 	const toStorage = () => {
 		localStorage.setItem('threeOrders', JSON.stringify(orders));
-
 	}
+	// функция котора сколяет числительные
+	function declOfNum(n, titles) {
+  	return n + ' ' + titles[n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2];
+}
+	
 	// дедлайн функция
 	const calcDeadline = (data) => {
 		const deadline = new Date(data);
-		const toDay = Date.now();
-		console.log('toDay: ', toDay);
-		const remaining = (deadline - today);
-		console.log('remaining: ', remaining);
+		// день сегодня
+		const today = Date.now();
+		const remaining = Math.floor((deadline - today) / 1000 / 60 / 60);
 		
+		if (remaining / 24 > 2) {
+			return declOfNum(Math.floor(remaining / 24), ['день', 'дня', 'дней']);
+		}
 		
-		// const deadLine = new Data(deadline)
-		console.log('deadline: ', data);
+		return declOfNum(remaining, ['час', 'часа', 'часов']);
+		
 	}
 	// добавляем новую строку в таблице
 	const renderOrders = function () {
@@ -43,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				<td> ${order.title} </td>
 				<td class='${order.currency}'></td>
 				<td> ${calcDeadline(order.deadline)} </td>
-			</tr>`
+			</tr>`;
 		});
 	};
 
@@ -162,10 +172,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	customer.addEventListener('click', () => {
+		const today = new Date().toISOString().substring(0, 10);
+		// минимальная дата календаря
+		formCustomer.querySelector('#deadline').min = today;
+		blockChoice.style.display = 'none';
+		// обрезаем дату
 		blockCustomer.style.display = 'block'
 		blockFreelancer.style.display = 'none'
 		btnExit.style.display = 'block'
-		blockChoice.style.display = 'none'
 	})
 
 	freelancer.addEventListener('click', () => {
