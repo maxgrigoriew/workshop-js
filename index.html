@@ -1,289 +1,231 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="./libs/bootstrap.min.css">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="./style/style.css">
-	<title>freelance - шаурма</title>
+	<title>O-ZONE GLO ACADEMY</title>
 </head>
 
 <body>
 
-	<!--hello world-->
-	<main class="container py-5 text-center">
-		<div id="block-choice">
-			<img class="d-block mx-auto mb-4" src="./img/logo.png" alt="" width="72" height="72">
-			<h1>FreeShavuha</h1>
-			<p class="lead text-muted">Добро пожаловать на нашу фриланс биржу</p>
-			<p class="lead text-muted">Если вы заказчик то вы можете заказать проект</p>
-			<p class="lead text-muted">Если вы фрилансер то вы всегда найдете у нас проект по силам</p>
-			<p class="mt-5">
-				<a href="#" id="customer" class="btn btn-primary my-3 px-4 py-2">Заказчик</a>
-				<a href="#" id="freelancer" class="btn btn-secondary my-3 px-4 py-2">Фрилансер</a>
-			</p>
-		</div>
+	<header>
+		<nav>
+			<div class="container">
+				<div class="row justify-content-between align-items-center">
+					<a class="logo" href="/"></a>
+					<div class="catalog-button">
+						<button><span class="catalog-button_burger"></span>Каталог</button>
+						<div class="catalog">
+							<ul class="catalog-list">
 
-
-		<!--meanie - заказчик-->
-		<a href="" class="link">link</a>
-		<div id="block-customer">
-			<img class="d-block mx-auto mb-4" src="./img/logo.png" alt="" width="72" height="72">
-			<h1>FreeShavuha</h1>
-			<div class="col">
-				<h4 class="mb-3">Оставьте заявку</h4>
-				<form id="form-customer">
-
-					<div class="mb-3">
-						<label for="title">Заголовок (краткое описание задачи)</label>
-						<input type="text" class="form-control" id="title" name="title" required value="заголовок">
-					</div>
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="firstName">Ваше имя</label>
-							<input type="text" class="form-control" id="firstName" name="firstName" required
-								value="ваше имя">
-						</div>
-						<div class="col-md-4 mb-3">
-							<label for="email">Email</label>
-							<input type="email" class="form-control" id="email" name="email" placeholder="you@mail.com"
-								required value="email@email">
-						</div>
-						<div class="col-md-4 mb-3">
-							<label for="phone">Номер телефона <span class="text-muted">(optional)</span></label>
-							<input type="text" class="form-control" id="phone" name="phone" value="911">
+							</ul>
 						</div>
 					</div>
-
-
-					<div class="mb-3">
-						<label for="description">Описание</label>
-						<textarea type="text" class="form-control" id="description" name="description"
-							placeholder="Поднобно опишите задачу" rows="4"
-							required>Lorem ipsum dolor sit amet, consectetur.</textarea>
+					<div class="search">
+						<div class="search-wrapper">
+							<input class="search-wrapper_input" type="text">
+						</div>
+						<div class="search-btn">
+							<button></button>
+						</div>
 					</div>
+					<a href="#" id="cart">
+						<span class="counter">0</span>
+						<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+								<path fill="currentColor" fill-rule="nonzero"
+									d="M6 6a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2h5.133L21.82 18.496A4 4 0 0 1 17.85 22H6.149a4 4 0 0 1-3.969-3.504L.867 8H6V6zm6 2a1 1 0 0 1 0 2H3.133l1.03 8.248A2 2 0 0 0 6.149 20h11.704a2 2 0 0 0 1.984-1.752L20.867 10H16V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2h4z">
+								</path>
+							</svg></span>
+						<span class="desc">Корзина</span>
+					</a>
+				</div>
+			</div>
+		</nav>
+	</header>
 
-					<div class="row">
-						<div class="col-md-6 mb-3">
-
-							<div class="mb-3">
-								<label for="amount">Количество</label>
-								<input type="number" class="form-control" id="amount" name="amount" required value="10">
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col-3 col-xl-2 d-none d-lg-block">
+					<div class="filter">
+						<div class="filter-title">
+							<h5>Фильтр</h5>
+						</div>
+						<div class="filter-price">
+							<div class="filter-price_title">
+								Цена
 							</div>
-							<div class="d-flex justify-content-center">
-								<label class="currency">
-									<input class="currency__radio" type="radio" name="currency" id="bucks"
-										value="bucks">
-									<span class="img__radio img__radio_bucks"></span>
-								</label>
-								<label class="currency">
-									<input class="currency__radio" type="radio" name="currency" id="shawarma"
-										value="shawarma" checked>
-									<span class="img__radio img__radio_shawarma"></span>
-								</label>
-								<label class="currency">
-									<input class="currency__radio" type="radio" name="currency" id="doshirak"
-										value="doshirak">
-									<span class="img__radio img__radio_doshirak"></span>
-								</label>
-							</div>
+							<form>
+								<div class="filter-price_range">
+									<div class="filter-price_input-wrapper">
+										<label for="min" class="filter-price_label">от</label>
+										<input id="min" class="filter-price_input">
+									</div>
+									<div class="filter-price_input-wrapper">
+										<label for="max" class="filter-price_label">до</label>
+										<input id="max" class="filter-price_input"></div>
+								</div>
+							</form>
 						</div>
-						<div class="col-md-6 mb-3">
-							<div class="mb-3">
-								<label for="deadline">Срок выполнения до:</label>
-
-								<input type="date" id="deadline" class="form-control" name="deadline" max="2021-12-31"
-									required value="2021-06-16">
-							</div>
-							<button class="btn btn-primary btn-lg btn-block" type="submit">Отправить заявку</button>
+						<div class="filter-check">
+							<label class="filter-check_label">
+								<input type="checkbox" class="filter-check_checkbox" id="discount-checkbox">
+								<span class="filter-check_checkmark"></span>
+								<span class="filter-check_label-text">Акция</span>
+							</label>
 						</div>
-
+					</div>
+				</div>
+				<div class="col-12 col-lg-9 col-xl-10">
+					<div class="container">
+						<div class="row no-gutters goods">
+							<!-- КАРТОЧКИ ТОВАРОВ -->
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="card">
+									<div class="card-img-wrapper">
+										<span class="card-img-top"
+											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1033180284.jpg')"></span>
+									</div>
+									<div class="card-body justify-content-between">
+										<div class="card-price">33990 ₽</div>
+										<h5 class="card-title">Игровая приставка Sony PlayStation 4 Pro</h5>
+										<button class="btn btn-primary">В корзину</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="card">
+									<div class="card-sale">🔥Hot Sale🔥</div>
+									<div class="card-img-wrapper">
+										<span class="card-img-top"
+											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1027495663.jpg')"></span>
+									</div>
+									<div class="card-body justify-content-between">
+										<div class="card-price">16499 ₽</div>
+										<h5 class="card-title">Игровая приставка Sony PlayStation 3 Super Slim</h5>
+										<button class="btn btn-primary">В корзину</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="card">
+									<div class="card-img-wrapper">
+										<span class="card-img-top"
+											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1024358491.jpg')"></span>
+									</div>
+									<div class="card-body justify-content-between">
+										<div class="card-price">39990 ₽</div>
+										<h5 class="card-title">Игровая приставка Xbox One X</h5>
+										<button class="btn btn-primary">В корзину</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="card">
+									<div class="card-sale">🔥Hot Sale🔥</div>
+									<div class="card-img-wrapper">
+										<span class="card-img-top"
+											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1024822131.jpg')"></span>
+									</div>
+									<div class="card-body justify-content-between">
+										<div class="card-price">23411 ₽</div>
+										<h5 class="card-title">Игровая приставка Xbox One S</h5>
+										<button class="btn btn-primary">В корзину</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="card">
+									<div class="card-img-wrapper">
+										<span class="card-img-top"
+											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1021386685.jpg')"></span>
+									</div>
+									<div class="card-body justify-content-between">
+										<div class="card-price">24751 ₽</div>
+										<h5 class="card-title">Игровая приставка Nintendo Switch</h5>
+										<button class="btn btn-primary">В корзину</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="card">
+									<div class="card-sale">🔥Hot Sale🔥</div>
+									<div class="card-img-wrapper">
+										<span class="card-img-top"
+											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1024928305.jpg')"></span>
+									</div>
+									<div class="card-body justify-content-between">
+										<div class="card-price">3624 ₽</div>
+										<h5 class="card-title">Игровая приставка Sega Retro Genesis HD</h5>
+										<button class="btn btn-primary">В корзину</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="card">
+									<div class="card-sale">🔥Hot Sale🔥</div>
+									<div class="card-img-wrapper">
+										<span class="card-img-top"
+											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1021877092.jpg')"></span>
+									</div>
+									<div class="card-body justify-content-between">
+										<div class="card-price">1551 ₽</div>
+										<h5 class="card-title">Игровая приставка Dendy Junior</h5>
+										<button class="btn btn-primary">В корзину</button>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
+								<div class="card">
+									<div class="card-img-wrapper">
+										<span class="card-img-top"
+											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1025222877.jpg')"></span>
+									</div>
+									<div class="card-body justify-content-between">
+										<div class="card-price">10445 ₽</div>
+										<h5 class="card-title">Игровая приставка Sony PlayStation Classic</h5>
+										<button class="btn btn-primary">В корзину</button>
+									</div>
+								</div>
+							</div>
+							<!-- END КАРТОЧКИ ТОВАРОВ -->
+						</div>
 					</div>
 
-
-				</form>
+				</div>
 			</div>
 		</div>
 
-		<!--freelancer-->
-
-		<div id="block-freelancer">
-			<img class="d-block mx-auto mb-4" src="./img/logo.png" alt="" width="72" height="72">
-			<h1>FreeShavuha</h1>
-			<div class="table-responsive">
-				<table class="table table-bordered table-hover table-sm">
-					<thead class="thead-dark">
-						<tr>
-							<th>#</th>
-							<th>Основная задача</th>
-							<th>Валюта</th>
-							<th>Дедлайн</th>
-						</tr>
-					</thead>
-					<tbody id="orders">
-						<!-- <tr class="order">
-							<td>1</td>
-							<td>Lorem</td>
-							<td class="doshirak"></td>
-							<td>2019-12-31</td>
-						</tr>
-						<tr class="order taken">
-							<td>2</td>
-							<td>Lorem</td>
-							<td class="bucks"></td>
-							<td>2020-01-14</td>
-						</tr>
-						<tr class="order">
-							<td>3</td>
-							<td>Lorem</td>
-							<td class="doshirak"></td>
-							<td>2019-12-24</td>
-						</tr>
-						<tr class="order taken">
-							<td>4</td>
-							<td>Lorem</td>
-							<td class="shawarma"></td>
-							<td>2020-02-03</td>
-						</tr>
-						<tr class="order">
-							<td>5</td>
-							<td>Lorem</td>
-							<td class="doshirak"></td>
-							<td>2020-04-02</td>
-						</tr>
-						<tr class="order">
-							<td>6</td>
-							<td>Lorem</td>
-							<td class="shawarma"></td>
-							<td>2020-02-14</td>
-						</tr> -->
-
-
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<button class="btn btn-info" id="btn-exit">Выход</button>
 
 	</main>
-	<!--modal-->
 
-	<div id="order_read" class="order-modal modal bd-example-modal-lg">
-		<div class="modal-dialog modal-lg m-auto" role="document">
+	<div class="cart">
+		<div class="cart-body">
+			<div class="cart-title">Корзина</div>
+			<div class="cart-total">Общая сумма: <span>0</span> руб</div>
 
-			<div class="modal-content">
-				<div class="modal-header bg-dark text-white">
-					<h4 class="modal-title ">Заголовок</h4>
-					<button type="button" class="close text-white" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+			<div class="cart-wrapper">
+				<div id="cart-empty">
+					Ваша корзина пока пуста
 				</div>
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-6">
-							<b>Имя заказчика: </b><span class="firstName">Петров Василий</span>
-						</div>
-						<div class="col-6">
-							<b>Email заказчика: </b><a class="email" href="mailto:1@1">1@1</a>
-						</div>
-						<div class="col-12 bg-info text-white my-4">
-							<h5>Подробное описание задачи</h5>
-							<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. AliqFuam
-								consectetur
-								consequuntur facilis magni maiores neque nostrum. Accusantium corporis culpa esse
-								facilis modi neque
-								nesciunt odio quisquam rerum veritatis, voluptatibus, voluptatum!</p>
-						</div>
+			</div>
+			<button class="btn btn-primary cart-confirm">Оформить заказ</button>
+			<div class="cart-close">
 
-						<div
-							class="col-12 bg-warning text-dark pt-2 d-flex justify-content-around align-content-center">
-							<h5>Срок сдачи проекта</h5>
-							<p class="deadline">10.03.2020</p>
-						</div>
-
-					</div>
-				</div>
-				<div class="modal-footer justify-content-between">
-					<div class="modal-currency">
-						<span class="text">Оплата:</span>
-						<span class="currency"><span class="currency_img"></span></span>
-						<span class="count">5</span>
-					</div>
-					<div>
-						<button type="button" class="btn btn-info"><a class="phone text-white" href="#">Связаться</a>
-						</button>
-						<button type="button" class="btn btn-success get-order">Взять заказ</button>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
-
-	<div id="order_active" class="order-modal modal bd-example-modal-lg">
-		<div class="modal-dialog modal-lg m-auto" role="document">
-
-			<div class="modal-content">
-				<div class="modal-header bg-success text-white">
-					<h4 class="modal-title ">Заголовок</h4>
-					<button type="button" class="close text-white" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-4 text-center">
-							<p>
-								<b>Имя заказчика: </b>
-							</p>
-							<span class="firstName">Петров Василий</span>
-						</div>
-						<div class="col-4 text-center">
-							<p>
-								<b>Email заказчика: </b>
-							</p>
-							<a class="email" href="mailto:1@1">1@1</a>
-						</div>
-						<div class="col-4 text-center modal-currency">
-							<span class="text">Оплата:</span>
-							<span class="currency"><span class="currency_img"></span></span>
-							<span class="count">5</span>
-						</div>
-						<div class="col-12 bg-info text-white my-4 py-2">
-							<h5>Подробное описание задачи</h5>
-							<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-								consectetur
-								consequuntur facilis magni maiores neque nostrum. Accusantium corporis culpa esse
-								facilis modi neque
-								nesciunt odio quisquam rerum veritatis, voluptatibus, voluptatum!</p>
-						</div>
-
-						<div
-							class="col-12 bg-warning text-dark pt-2 d-flex justify-content-around align-content-center">
-							<h5>Срок сдачи проекта</h5>
-							<p class="deadline">10.03.2020</p>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer justify-content-end">
-					<button type="button" id="capitulation" class="btn btn-danger">Отказаться</button>
-
-					<button type="button" id="ready" class="btn btn-success">Выполнил</button>
-
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<!--exit-->
-
-	<script src="script/script.js">
-	</script>
 </body>
-
 
 </html>
