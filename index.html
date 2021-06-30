@@ -1,232 +1,272 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-	<link rel="manifest" href="favicon/site.webmanifest">
-	<meta name="msapplication-TileColor" content="#00aba9">
-	<meta name="theme-color" content="#ffffff">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="./style/style.css">
-	<title>O-ZONE GLO ACADEMY</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Выводим заголовок -->
+  <title>Pikadu — главная</title>
+  <!-- Подключаем normalize -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- Подключаем стили -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <!-- Создаем шапку сайта -->
+  <header class="header">
+    <div class="header-wrapper">
+      <a href="/" class="header-logo">
+        <img class="header-logo-image" src="img/logo.svg" alt="logo: Pikadu">
+      </a>
+      <nav class="header-nav">
+        <ul class="header-menu">
+          <li class="header-menu-item"><a href="#" class="header-menu-link">Свежее</a></li>
+          <li class="header-menu-item"><a href="#" class="header-menu-link">Лучшее</a></li>
+          <li class="header-menu-item"><a href="#" class="header-menu-link">Горячее</a></li>
+          <li class="header-menu-item"><a href="#" class="header-menu-link">Подписки</a></li>
+        </ul>
+        
+      </nav>
+      <!-- /.header-nav -->
+      <div class="input-group search">
+        <input type="search" class="search-input" placeholder="Поиск по сайту">
+        <button class="search-button">
+          <img src="img/search.svg" alt="icon: search" class="search-icon">
+        </button>
+      </div>
+      <!-- /.input-group -->
+      <a href="#" class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+    <!-- /.header-wrapper -->
+  </header>
 
-	<header>
-		<nav>
-			<div class="container">
-				<div class="row justify-content-between align-items-center">
-					<a class="logo" href="/"></a>
-					<div class="catalog-button">
-						<button><span class="catalog-button_burger"></span>Каталог</button>
-						<div class="catalog">
-							<ul class="catalog-list">
-
-							</ul>
-						</div>
-					</div>
-					<div class="search">
-						<div class="search-wrapper">
-							<input class="search-wrapper_input" type="text">
-						</div>
-						<div class="search-btn">
-							<button></button>
-						</div>
-					</div>
-					<a href="#" id="cart">
-						<span class="counter">0</span>
-						<span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-								<path fill="currentColor" fill-rule="nonzero"
-									d="M6 6a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2h5.133L21.82 18.496A4 4 0 0 1 17.85 22H6.149a4 4 0 0 1-3.969-3.504L.867 8H6V6zm6 2a1 1 0 0 1 0 2H3.133l1.03 8.248A2 2 0 0 0 6.149 20h11.704a2 2 0 0 0 1.984-1.752L20.867 10H16V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2h4z">
-								</path>
-							</svg></span>
-						<span class="desc">Корзина</span>
-					</a>
-				</div>
-			</div>
-		</nav>
-	</header>
-
-	<main>
-		<div class="container">
-			<div class="row">
-				<div class="col-3 col-xl-2 d-none d-lg-block">
-					<div class="filter">
-						<div class="filter-title">
-							<h5>Фильтр</h5>
-						</div>
-						<div class="filter-price">
-							<div class="filter-price_title">
-								Цена
-							</div>
-							<form>
-								<div class="filter-price_range">
-									<div class="filter-price_input-wrapper">
-										<label for="min" class="filter-price_label">от</label>
-										<input id="min" class="filter-price_input">
-									</div>
-									<div class="filter-price_input-wrapper">
-										<label for="max" class="filter-price_label">до</label>
-										<input id="max" class="filter-price_input"></div>
-								</div>
-							</form>
-						</div>
-						<div class="filter-check">
-							<label class="filter-check_label">
-								<input type="checkbox" class="filter-check_checkbox" id="discount-checkbox">
-								<span class="filter-check_checkmark"></span>
-								<span class="filter-check_label-text">Акция</span>
-							</label>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 col-lg-9 col-xl-10">
-					<div class="container">
-						<div class="row no-gutters goods">
-							<!-- КАРТОЧКИ ТОВАРОВ -->
-							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-								<div class="card">
-									<div class="card-img-wrapper">
-										<span class="card-img-top"
-											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1033180284.jpg')"></span>
-									</div>
-									<div class="card-body justify-content-between">
-										<div class="card-price">33990 ₽</div>
-										<h5 class="card-title">Игровая приставка Sony PlayStation 4 Pro</h5>
-										<button class="btn btn-primary">В корзину</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-								<div class="card">
-									<div class="card-sale">🔥Hot Sale🔥</div>
-									<div class="card-img-wrapper">
-										<span class="card-img-top"
-											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1027495663.jpg')"></span>
-									</div>
-									<div class="card-body justify-content-between">
-										<div class="card-price">16499 ₽</div>
-										<h5 class="card-title">Игровая приставка Sony PlayStation 3 Super Slim</h5>
-										<button class="btn btn-primary">В корзину</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-								<div class="card">
-									<div class="card-img-wrapper">
-										<span class="card-img-top"
-											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1024358491.jpg')"></span>
-									</div>
-									<div class="card-body justify-content-between">
-										<div class="card-price">39990 ₽</div>
-										<h5 class="card-title">Игровая приставка Xbox One X</h5>
-										<button class="btn btn-primary">В корзину</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-								<div class="card">
-									<div class="card-sale">🔥Hot Sale🔥</div>
-									<div class="card-img-wrapper">
-										<span class="card-img-top"
-											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1024822131.jpg')"></span>
-									</div>
-									<div class="card-body justify-content-between">
-										<div class="card-price">23411 ₽</div>
-										<h5 class="card-title">Игровая приставка Xbox One S</h5>
-										<button class="btn btn-primary">В корзину</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-								<div class="card">
-									<div class="card-img-wrapper">
-										<span class="card-img-top"
-											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1021386685.jpg')"></span>
-									</div>
-									<div class="card-body justify-content-between">
-										<div class="card-price">24751 ₽</div>
-										<h5 class="card-title">Игровая приставка Nintendo Switch</h5>
-										<button class="btn btn-primary">В корзину</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-								<div class="card">
-									<div class="card-sale">🔥Hot Sale🔥</div>
-									<div class="card-img-wrapper">
-										<span class="card-img-top"
-											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1024928305.jpg')"></span>
-									</div>
-									<div class="card-body justify-content-between">
-										<div class="card-price">3624 ₽</div>
-										<h5 class="card-title">Игровая приставка Sega Retro Genesis HD</h5>
-										<button class="btn btn-primary">В корзину</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-								<div class="card">
-									<div class="card-sale">🔥Hot Sale🔥</div>
-									<div class="card-img-wrapper">
-										<span class="card-img-top"
-											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1021877092.jpg')"></span>
-									</div>
-									<div class="card-body justify-content-between">
-										<div class="card-price">1551 ₽</div>
-										<h5 class="card-title">Игровая приставка Dendy Junior</h5>
-										<button class="btn btn-primary">В корзину</button>
-									</div>
-								</div>
-							</div>
-							<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-								<div class="card">
-									<div class="card-img-wrapper">
-										<span class="card-img-top"
-											style="background-image: url('https://cdn1.ozone.ru/multimedia/c400/1025222877.jpg')"></span>
-									</div>
-									<div class="card-body justify-content-between">
-										<div class="card-price">10445 ₽</div>
-										<h5 class="card-title">Игровая приставка Sony PlayStation Classic</h5>
-										<button class="btn btn-primary">В корзину</button>
-									</div>
-								</div>
-							</div>
-							<!-- END КАРТОЧКИ ТОВАРОВ -->
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-
-	</main>
-
-	<div class="cart">
-		<div class="cart-body">
-			<div class="cart-title">Корзина</div>
-			<div class="cart-total">Общая сумма: <span>0</span> руб</div>
-
-			<div class="cart-wrapper">
-				<div id="cart-empty">
-					Ваша корзина пока пуста
-				</div>
-			</div>
-			<button class="btn btn-primary cart-confirm">Оформить заказ</button>
-			<div class="cart-close">
-
-			</div>
-		</div>
-	</div>
-	<script src="./src/index.js"></script>
+  <div class="content">
+    <main class="posts">
+      <section class="post">
+        <div class="post-body">
+          <h2 class="post-title">Заголовлок поста</h2>
+          <p class="post-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Языком что рот
+            маленький реторический вершину текстов обеспечивает гор свой назад решила сбить маленькая дорогу жизни рукопись ему
+            букв деревни предложения, ручеек залетают продолжил парадигматическая? Но языком сих пустился, запятой своего его
+            снова решила меня вопроса моей своих пояс коварный, власти диких правилами напоивший они текстов ipsum первую
+            подпоясал? Лучше, щеке подпоясал приставка большого курсивных на берегу своего? Злых, составитель агентство что
+            вопроса ведущими о решила одна алфавит! </p>
+          <p class="post-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Языком что рот
+            маленький реторический вершину текстов обеспечивает гор свой назад решила сбить маленькая дорогу жизни рукопись ему
+            букв деревни предложения, ручеек залетают продолжил парадигматическая? Но языком сих пустился, запятой своего его
+            снова решила меня вопроса моей своих пояс коварный, власти диких правилами напоивший они текстов ipsum первую
+            подпоясал? Лучше, щеке подпоясал приставка большого курсивных на берегу своего? Злых, составитель агентство что
+            вопроса ведущими о решила одна алфавит! </p>
+          <p class="post-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Языком что рот
+            маленький реторический вершину текстов обеспечивает гор свой назад решила сбить маленькая дорогу жизни рукопись ему
+            букв деревни предложения, ручеек залетают продолжил парадигматическая? Но языком сих пустился, запятой своего его
+            снова решила меня вопроса моей своих пояс коварный, власти диких правилами напоивший они текстов ipsum первую
+            подпоясал? Лучше, щеке подпоясал приставка большого курсивных на берегу своего? Злых, составитель агентство что
+            вопроса ведущими о решила одна алфавит! </p>
+          <div class="tags">
+            <a href="#" class="tag">#свежее</a>
+            <a href="#" class="tag">#новое</a>
+            <a href="#" class="tag">#горячее</a>
+            <a href="#" class="tag">#мое</a>
+            <a href="#" class="tag">#случайность</a>
+          </div>
+          <!-- /.tags -->
+        </div>
+        <!-- /.post-body -->
+        <div class="post-footer">
+          <div class="post-buttons">
+            <button class="post-button likes">
+              <svg width="19" height="20" class="icon icon-like">
+                <use xlink:href="img/icons.svg#like"></use>
+              </svg>
+              <span class="likes-counter">26</span>
+            </button>
+            <button class="post-button comments">
+              <svg width="21" height="21" class="icon icon-comment">
+                <use xlink:href="img/icons.svg#comment"></use>
+              </svg>
+              <span class="comments-counter">157</span>
+            </button>
+            <button class="post-button save">
+              <svg width="19" height="19" class="icon icon-save">
+                <use xlink:href="img/icons.svg#save"></use>
+              </svg>
+            </button>
+            <button class="post-button share">
+              <svg width="17" height="19" class="icon icon-share">
+                <use xlink:href="img/icons.svg#share"></use>
+              </svg>
+            </button>
+          </div>
+          <!-- /.post-buttons -->
+          <div class="post-author">
+            <div class="author-about">
+              <a href="#" class="author-username">arteislamov</a>
+              <span class="post-time">5 минут назад</span>
+            </div>
+            <a href="#" class="author-link"><img src="img/avatar.jpeg" alt="avatar" class="author-avatar"></a>
+          </div>
+          <!-- /.post-author -->
+        </div>
+        <!-- /.post-footer -->
+      </section>
+      <section class="post">
+        <div class="post-body">
+          <h2 class="post-title">Заголовлок поста</h2>
+          <p class="post-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Языком что
+            рот
+            маленький реторический вершину текстов обеспечивает гор свой назад решила сбить маленькая дорогу жизни рукопись
+            ему
+            букв деревни предложения, ручеек залетают продолжил парадигматическая? Но языком сих пустился, запятой своего его
+            снова решила меня вопроса моей своих пояс коварный, власти диких правилами напоивший они текстов ipsum первую
+            подпоясал? Лучше, щеке подпоясал приставка большого курсивных на берегу своего? Злых, составитель агентство что
+            вопроса ведущими о решила одна алфавит! </p>
+          <p class="post-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Языком что
+            рот
+            маленький реторический вершину текстов обеспечивает гор свой назад решила сбить маленькая дорогу жизни рукопись
+            ему
+            букв деревни предложения, ручеек залетают продолжил парадигматическая? Но языком сих пустился, запятой своего его
+            снова решила меня вопроса моей своих пояс коварный, власти диких правилами напоивший они текстов ipsum первую
+            подпоясал? Лучше, щеке подпоясал приставка большого курсивных на берегу своего? Злых, составитель агентство что
+            вопроса ведущими о решила одна алфавит! </p>
+          <p class="post-text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Языком что
+            рот
+            маленький реторический вершину текстов обеспечивает гор свой назад решила сбить маленькая дорогу жизни рукопись
+            ему
+            букв деревни предложения, ручеек залетают продолжил парадигматическая? Но языком сих пустился, запятой своего его
+            снова решила меня вопроса моей своих пояс коварный, власти диких правилами напоивший они текстов ipsum первую
+            подпоясал? Лучше, щеке подпоясал приставка большого курсивных на берегу своего? Злых, составитель агентство что
+            вопроса ведущими о решила одна алфавит! </p>
+          <div class="tags">
+            <a href="#" class="tag">#свежее</a>
+            <a href="#" class="tag">#новое</a>
+            <a href="#" class="tag">#горячее</a>
+            <a href="#" class="tag">#мое</a>
+            <a href="#" class="tag">#случайность</a>
+          </div>
+          <!-- /.tags -->
+        </div>
+        <!-- /.post-body -->
+        <div class="post-footer">
+          <div class="post-buttons">
+            <button class="post-button likes">
+              <svg width="19" height="20" class="icon icon-like">
+                <use xlink:href="img/icons.svg#like"></use>
+              </svg>
+              <span class="likes-counter">26</span>
+            </button>
+            <button class="post-button comments">
+              <svg width="21" height="21" class="icon icon-comment">
+                <use xlink:href="img/icons.svg#comment"></use>
+              </svg>
+              <span class="comments-counter">157</span>
+            </button>
+            <button class="post-button save">
+              <svg width="19" height="19" class="icon icon-save">
+                <use xlink:href="img/icons.svg#save"></use>
+              </svg>
+            </button>
+            <button class="post-button share">
+              <svg width="17" height="19" class="icon icon-share">
+                <use xlink:href="img/icons.svg#share"></use>
+              </svg>
+            </button>
+          </div>
+          <!-- /.post-buttons -->
+          <div class="post-author">
+            <div class="author-about">
+              <a href="#" class="author-username">arteislamov</a>
+              <span class="post-time">5 минут назад</span>
+            </div>
+            <a href="#" class="author-link"><img src="img/avatar.jpeg" alt="avatar" class="author-avatar"></a>
+          </div>
+          <!-- /.post-author -->
+        </div>
+        <!-- /.post-footer -->
+      </section>
+    </main>
+    <!-- /.posts -->
+    <aside class="sidebar">
+      
+      <div class="login">
+        <form action="" class="login-form">
+          <h2 class="login-title">Авторизация</h2>
+          <input type="email" type='password' class="login-input login-email"
+          name='email' minlength="3" required placeholder="Введите email">
+          <input type="password" type='password' class="login-input login-password"
+          name='password' minlength="3" required placeholder="Введите пароль">
+          <a href="" class="login-forget">Забыли пароль?</a>
+          <button type='submit' class="login-signin">Войти</button>
+          <a href="" class="login-signup">Регистрация</a>
+          
+        </form>
+      </div>
+      <div class="user">
+        <a href="#" class="user-info">
+          <img width="40" height="40" src="img/avatar.jpeg" alt="photo: user" class="user-avatar">
+          <span class="user-name">islamovartem</span>
+        </a>
+        <!-- /.user-info -->
+        <a href="#" class="exit">
+          <svg class="icon icon-exit">
+            <use xlink:href="img/icons.svg#exit"></use>
+          </svg>
+        </a>
+        <!-- /.exit -->
+      </div>
+      <!-- /.user -->
+      <nav class="sidebar-nav">
+        <ul class="sidebar-menu">
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-link">Ответы</a>
+          </li>
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-link active">Комментарии</a>
+          </li>
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-link">Оценки</a>
+          </li>
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-link">Сохраненное </a>
+          </li>
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-link">Подписки</a>
+          </li>
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-link">Заметки</a>
+          </li>
+          <li class="sidebar-menu-item">
+            <a href="#" class="sidebar-menu-link">Игнор-лист</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="new-post.html" class="button button-new-post">
+        <svg class="icon icon-fire">
+          <use xlink:href="img/icons.svg#fire"></use>
+        </svg>
+        Опубликовать пост
+      </a>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">Комментарий дня</h2>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <a href="#" class="card-body-title">Как обмануть банкомат, если вы хотите снять больше наличных</a>
+          <p class="card-text">Таким образом укрепление и развитие структуры требуют от нас анализа форм развития. Не следует, однако забывать, что реализация намеченных плановых заданий требуют от нас анализа позиций, занимаемых участниками в отношении поставленных
+          задач. Задача организации, в особенности же консультация...</p>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+      <a href="#" class="ad"></a>
+    </aside>
+    <!-- /.sidebar -->
+  </div>
+  <!-- /.content -->
+  <script src="js/main.js"></script>
 </body>
-
-</html>
+</html> 
