@@ -3,17 +3,17 @@
 const headerCityButton = document.querySelector('.header__city-button')
 
 // получаем хеш ссылки и обрезаем решетку
-let hash = location.hash.substring(1)
+// let hash = location.hash.substring(1)
 const lincCategoryName = document.querySelectorAll('.navigation__link')
 const navigationList = document.querySelector('.navigation__list')
 
 
-lincCategoryName.forEach((link) => {
-    link.addEventListener('click', () => {
-        const goodsTitle = document.querySelector('.goods__title')
-        goodsTitle.innerHTML = link.innerHTML;
-    })
-})
+// lincCategoryName.forEach((link) => {
+//     link.addEventListener('click', () => {
+//         const goodsTitle = document.querySelector('.goods__title')
+//         goodsTitle.innerHTML = link.innerHTML;
+//     })
+// })
 
 if (localStorage.getItem('lomoda-location')) {
     headerCityButton.textContent = localStorage.getItem('lomoda-location')
@@ -80,11 +80,11 @@ const getData = async () => {
     }
 };
 
-const getGoods = (callback, value) => {
+const getGoods = (callback, prop, value) => {
     getData()
         .then(data => {
             if (value) {
-                callback(data.filter(item=> item.category === value))
+                callback(data.filter(item=> item[prop] === value))
             } else {
                 callback(data);
             }
@@ -94,8 +94,21 @@ const getGoods = (callback, value) => {
         });
 };
     
-
+// страница категорий
 try {
+    const goodsTitle = document.querySelector('.goods__title')
+    // Лескина вариант замены заголовка при клике на соответствующий раздел
+    // const changeTitle = () => {
+    //     goodsTitle.textContent = document.querySelector(`[href*="#${hash}"]`).textContent;
+    //     console.log('goodsTitle: ', goodsTitle);
+    // }
+    
+    // мой 
+    // lincCategoryName.forEach((link) => {
+    //     link.addEventListener('click', () => {
+    //         const goodsTitle = document.querySelector('.goods__title')
+    //         goodsTitle.innerHTML = link.innerHTML;
+    //     });
     const goodsList = document.querySelector('.goods__list');
     if (!goodsList) {
         throw 'this a not goods page'
@@ -123,30 +136,55 @@ try {
         `;
         return li;
     }
-        const renderGoodsList = data => {
-            goodsList.textContent = ''
-
-            data.forEach((item) => {
-                const card = createCard(item)
-                goodsList.append(card)
-                
-            })
-            
-    }
     
-    window.addEventListener('hashchange', () => {
-        hash = location.hash.substring(1)
-        getGoods(renderGoodsList, hash)
+const renderGoodsList = data => {
+    // очищаем список карточер перед добавлением из базы дынных
+    goodsList.textContent = ''
+
+    data.forEach((item) => {
+        const card = createCard(item)
+        goodsList.append(card)
     })
-        getGoods(renderGoodsList, hash)
+            
+};
+    
+window.addEventListener('hashchange', () => {
+    hash = location.hash.substring(1)
+    getGoods(renderGoodsList, 'category', hash)
+    changeTitle()
+});
+getGoods(renderGoodsList, 'category', hash);
+changeTtitle()
     
 } catch (err) {
     console.log(err)
 }
 
-// getGoods((data) => {
-//     console.log(data);
-// })
+
+// страница товара
+
+try {
+    if (!document.querySelector('.card-good')){
+        throw 'this is not a card-good '
+    }
+    
+    const cardGoodBrand = document.querySelector('.card-good__brand');
+    const cardGoodTitle = document.querySelector('.card-good__title');
+    const cardGoodPrice = document.querySelector('.card-good__price');
+    const cardGoodColor = document.querySelector('.card-good__color');
+    const cardGoodColorList = document.querySelector('.card-good__color-list');
+    const cardGoodSelectItem = document.querySelector('.card-good__select-item');
+    const cardGoodSizes = document.querySelector('.card-good__sizes');
+    const cardGoodImage = document.querySelector('.card-good__image');
+    
+    const renderCardGood = ([{ brand, name, cost, color, sizes, photo }]) => {
+        console.log(name);
+    }
+    
+    getGoods(renderCardGood, 'id', hash)
+} catch (err) {
+    console.log(err)
+}
 
 subheaderCart.addEventListener('click', () => {
     cartOverlay.classList.add('cart-overlay-open')
